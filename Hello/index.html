@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>** 도서대여</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        /* 
+           반응형 web 에서는 viewport 개념을 잘 잡아야 한다  
+           width, heigh 를 %(특히 100%)로 설정할경우
+           device 에 따라 화면이 약간씩 차이가 나는 경우가 있다
+           이런경우 viewport 대한 비율로 
+           vw(viewport width)
+           vh(viewport height) 단위를 사용하는 것이 좋을 수 있다
+           */
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        /*
+        바깥쪽 box 를 flex 로 지정하면
+        내부의 box 들은 flex-item 이된다.
+        flex-item 의 기본 display 속성은 ?
+
+        */
+        flex-flow: column;
+      }
+
+      header {
+        background-color: rgb(77, 236, 77);
+        /*
+        em, rem : padding, margin 에서 많이 사용하는 단위
+        상대단위 : 주변의 text, content, tag에 비례하여 설정
+        rem : 여기서는 header tag 내부의 가장 먼저 나타나는
+        h1 tag 의 크기에 비례하여 padding 을 설정
+        복잡한 연산이 있지만 h1 tag 의 text 를 1rem 으로 보고
+        2배 만큼의 padding 을 주어라
+        */
+        padding: 2rem;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        text-align: center;
+      }
+
+      nav {
+        background-color: blue;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        color: white;
+      }
+
+      nav li {
+        padding: 12px 16px;
+        cursor: pointer;
+      }
+
+      nav li:first-child {
+        margin-left: 20px;
+      }
+      nav li:hover {
+        background-color: #555;
+      }
+
+      section {
+        flex: 1;
+        background-color: #eee;
+        display: flex;
+      }
+
+      article {
+        margin: 12px 5px;
+        border: 1px solid green;
+        background-color: #888;
+        flex: 1;
+      }
+
+      article:nth-child(2) {
+        flex: 2;
+      }
+
+      footer {
+        background-color: #000;
+        text-align: center;
+        color: white;
+        padding: 0.8rem;
+      }
+
+      form {
+        width: 80%;
+        background-color: #eee;
+        margin: 20px auto;
+        padding: 36px;
+        border-radius: 10px;
+      }
+
+      fieldset {
+        color: blue;
+        font-weight: 900;
+        padding: 20px;
+        border: 1px solid green;
+        border-radius: 10px;
+      }
+
+      form div {
+        width: 90%;
+        margin: 3px auto;
+        padding: 5px;
+      }
+
+      label,
+      input {
+        display: inline-block;
+        padding: 8px;
+      }
+
+      label {
+        width: 30%;
+        text-align: right;
+        color: rgba(0, 0, 255, 0.5);
+      }
+
+      input {
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        width: 50%;
+      }
+
+      input:hover {
+        background-color: #888;
+      }
+
+      input:focus {
+        background-color: green;
+        color: white;
+      }
+
+      /*
+      자식 tag 를 선택하는 가상 선택자
+      nth-child(위치), nth-of-type(위치)
+      nth-child 는 중간에 다른 tag 들이 있을 경우
+        위치값이 정확히 선택되지 않는다
+        지정하는 tag 가 아닌 다른 tag를 자식 tag 로 인식
+      nth-of-type 는 정확히 선택한 tag 들 만 개수를 세어서
+        정확한 위치를 지정할 수 있다
+      */
+      form div:nth-of-type(5) {
+        text-align: right;
+      }
+      form div:nth-of-type(5) button {
+        padding: 12px 18px;
+        /* 
+        box tag 는 border 와 outline 이 같이 존재한다 
+        보통은 border를 none 으로 하면 태두리가 없는 box가
+        만들어지는데 기본값으로 border 있는 tag(button)은
+        border 와 outline 을 같이 지정해야 원하는 style 을
+        만들수 있는 경우가 많다.
+        */
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+
+      form div:nth-of-type(5) button:hover {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+      }
+      form div:nth-of-type(5) button:nth-of-type(1) {
+        background-color: blueviolet;
+        color: white;
+      }
+      form div:nth-of-type(5) button:nth-of-type(2) {
+        background-color: orange;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>나라 도서대여점</h1>
+      <p>도서대여 시스템 2022 v1</p>
+    </header>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>도서검색</li>
+        <li>도서대여</li>
+        <li>로그인</li>
+        <li>회원가입</li>
+      </ul>
+    </nav>
+    <section>
+      <article><h3>도서검색내용</h3></article>
+      <article>
+        <form>
+          <fieldset>
+            <legend>도서대여</legend>
+            <div>
+              <label>대여일자 : </label>
+              <input type="text" placeholder="대여일자" />
+            </div>
+            <div>
+              <label>회원이름 : </label>
+              <input type="text" placeholder="회원이름" />
+            </div>
+            <div>
+              <label>도서명 : </label>
+              <input type="text" placeholder="도서명" />
+            </div>
+            <div>
+              <label>대여금액 : </label>
+              <input type="text" placeholder="대여금액" />
+            </div>
+            <div>
+              <button type="button">대여실행</button>
+              <button type="button">대여취소</button>
+            </div>
+          </fieldset>
+        </form>
+      </article>
+      <article><h3>미반납</h3></article>
+    </section>
+    <footer>
+      <address>CopytRight &copy; callor@callor.com</address>
+    </footer>
+  </body>
+</html>
