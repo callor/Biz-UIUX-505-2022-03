@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* div tag selector 의 속성을 지정하기 */
+      div {
+        border: 1px solid blue;
+        margin: 20px;
+        height: 50px;
+      }
+      /* div id selector 의 속성을 지정하기 */
+      #div1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box {
+        font-weight: 900;
+        font-size: 20px;
+      }
+
+      .box.green {
+        color: green;
+      }
+
+      .box.blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1" class="box"><span>나는 1 Box 입니다</span></div>
+    <div id="div2" class="box yellow">나는 2 Box 입니다</div>
+    <div id="div3" class="box blue">나는 3 Box 입니다</div>
+    <div id="div4" class="box green">나는 4 Box 입니다</div>
+    <div id="div5" class="box red">나는 5 Box 입니다</div>
+  </body>
+  <script>
+    const div_yellow = document.querySelector(".box.yellow");
+    const div_red = document.querySelector(".box.red");
+
+    div_yellow.innerText = "나는 yello box 입니다";
+    div_yellow.style.color = "yellow";
+
+    div_yellow.addEventListener("click", () => {
+      div_red.style.backgroundColor = "red";
+    });
+
+    div_red.addEventListener("click", () => {
+      div_yellow.innerHTML = "왜 나를 바꾸는 거야~~~";
+      div_yellow.style.color = "blue";
+    });
+  </script>
+</html>

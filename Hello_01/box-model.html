@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      div {
+        border: 1px solid blue;
+        margin: 5px auto;
+      }
+
+      div:nth-of-type(1) {
+        /* view port 에 대하여 50% 만큼 width 를 설정 */
+        width: 50vw;
+      }
+      div:nth-of-type(2) {
+        width: 30vw;
+      }
+      div:nth-of-type(3) {
+        width: 80vw;
+      }
+      div:nth-of-type(n + 4) {
+        width: 50%;
+      }
+
+      /* odd : 홀수위치 */
+      div:nth-of-type(odd) {
+        background-color: blue;
+      }
+      /* even : 짝수 위치 */
+      div:nth-of-type(even) {
+        background-color: green;
+      }
+      div:nth-of-type(5) {
+        border: 5px solid blue;
+        padding: 10px;
+      }
+      div:nth-of-type(6) {
+        border: 10px solid green;
+        padding: 5px;
+      }
+      div:nth-of-type(7) {
+        border: 3px solid red;
+        padding: 20px;
+      }
+      div:nth-of-type(n + 10) {
+        width: 30%;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Box Model</h1>
+    <div>Box1</div>
+    <div>Box2</div>
+    <div>Box3</div>
+    <div>Box4</div>
+    <div>Box5</div>
+    <div>Box6</div>
+    <div>Box7</div>
+    <div>Box8</div>
+    <div>Box9</div>
+    <div>Box10</div>
+    <div>Box11</div>
+  </body>
+</html>
