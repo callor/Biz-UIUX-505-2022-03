@@ -112,5 +112,55 @@
         <li>짬짜면</li>
       </ul>
     </div>
+    <!-- 세번째 메뉴-->
+    <div class="menu-box">
+      <div class="top-menu">검색</div>
+      <ul class="drop-menu">
+        <li>구글</li>
+        <li>네이버</li>
+        <li>다음</li>
+      </ul>
+    </div>
   </body>
+  <script>
+    // .drop-menu 클래스 아래의 li tag 들을 모아서
+    // menuList 에 저장
+    // menuList 에는 현재 문서에서 조건에 맞는 li tag를 모두 가져와서
+    // menuList 를 배열로 만들어 준다
+    const menuList = document.querySelectorAll(".drop-menu li");
+
+    // li tag 는 여러개가 존재 하므로 아래와 같이 각각의 요소에
+    // event handler 를 추가해야 한다
+    // li tag 개수만큼 코드를 반복하여 작성해야 하고
+    // li tag 의 개수가 몇개인지 항상 알아야 한다.
+    // 상당히 불편한 코드가 된다
+    // menuList[0].addEventListener("click", () => {
+    //   const text = menuList[0].innerText;
+    //   alert(text);
+    // });
+
+    // let 키워드는 값이 변동되는 변수를 선언한다
+    for (let i = 0; i < menuList.length; i++) {
+      /*
+        eventListener 설정, event Handler 설정
+        li tag 를 클릭하면 li tag 의 text(innerText 속성값) 를 
+        text 변수에 담고
+        alert 창으로 보여라
+        */
+      menuList[i].addEventListener("click", () => {
+        const text = menuList[i].innerText;
+        alert(text);
+
+        if (text === "구글") {
+          document.location.href = "https://google.com";
+        } else if (text === "네이버") {
+          document.location.href = "https://naver.com";
+        } else if (text === "다음") {
+          document.location.href = "https://daum.net";
+        } else if (text === "간짜장") {
+          confirm("간짜장 시기킨분~~~");
+        }
+      });
+    }
+  </script>
 </html>
