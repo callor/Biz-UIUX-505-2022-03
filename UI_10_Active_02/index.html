@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+      nav {
+        flex: 1;
+        vertical-align: top;
+        border: 1px solid green;
+        padding: 10px;
+      }
+      nav ul {
+        list-style: none;
+      }
+
+      nav li {
+        border-bottom: 1px solid red;
+        padding: 10px;
+        /* box-shadow offset-x offset-y blur 색상 */
+        /* inset 은 그림자를 box 안쪽으로 들어가게 */
+        box-shadow: inset 0 0 0 #d80286;
+        transition: 0.5s;
+      }
+
+      nav li:hover {
+        box-shadow: inset 400px 0 0 #d80286;
+        cursor: pointer;
+      }
+
+      section {
+        flex: 6;
+        padding: 10px;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>HOME</li>
+        <li>회사소개</li>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+      </ul>
+    </nav>
+    <section>
+      <article>
+        감사원의 조직·직무범위·감사위원의 자격·감사대상공무원의 범위 기타 필요한
+        사항은 법률로 정한다. 위원은 탄핵 또는 금고 이상의 형의 선고에 의하지
+        아니하고는 파면되지 아니한다. 국회의 회의는 공개한다. 다만, 출석의원
+        과반수의 찬성이 있거나 의장이 국가의 안전보장을 위하여 필요하다고 인정할
+        때에는 공개하지 아니할 수 있다.
+      </article>
+      <article>
+        국회의원은 법률이 정하는 직을 겸할 수 없다. 국가는 재해를 예방하고 그
+        위험으로부터 국민을 보호하기 위하여 노력하여야 한다. 모든 국민은
+        인간다운 생활을 할 권리를 가진다. 중앙선거관리위원회는 대통령이 임명하는
+        3인, 국회에서 선출하는 3인과 대법원장이 지명하는 3인의 위원으로
+        구성한다. 위원장은 위원중에서 호선한다.
+      </article>
+      <article>
+        국가는 사회보장·사회복지의 증진에 노력할 의무를 진다. 법관이 중대한
+        심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여
+        퇴직하게 할 수 있다. 국회의원의 선거구와 비례대표제 기타 선거에 관한
+        사항은 법률로 정한다. 헌법재판소의 조직과 운영 기타 필요한 사항은 법률로
+        정한다.
+      </article>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      div.menu-box {
+        position: relative;
+        display: inline-block;
+        /*
+        가로방향 drop-menu 여러개 배치될때
+        drop submenu 가 없는 box 도 항상 상단에 있도록 하는 속성
+        */
+        vertical-align: top;
+      }
+      div.top-menu {
+        margin-left: 20px;
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+        padding: 12px 16px;
+        text-align: center;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+
+      /*
+      display : none = tag 자체가 화면에서 아예 사라져 없는 tag 가된다
+      display : block = tag 를 다시 나타나게
+      display 속성에는 에니메이션 관련 속성이 적용 많이 불편하다
+      transition 속성은 아예 작동하지 않는다
+
+      visibility: hidden 에서 visibility: visible로 변하는 속성을 부여하면
+      transition 이 어느정도 적용된다.
+      opacity:0 완전히 투명한 상태 ~ 1 : 완전히 보이는 상태
+      */
+
+      ul.drop-menu {
+        min-height: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: 1s;
+
+        z-index: -1;
+        transform: translateY(-2rem);
+
+        margin-left: 20px;
+        list-style: none;
+        /* 
+        drop sub menu 폭에 관계없이 top menu 의 width 유지 
+        이 속성이 적용되려면 바깥쪽 box 의 position:relative 로 설정
+        */
+        position: absolute;
+        /*
+        최소 폭 유지 
+        sub menu 가 접히는(wrap) 현상을 방지하기 위하여
+        sub menu의 width 가 가장 큰 요소의 값으로 설정한다
+        */
+        min-width: 200px;
+      }
+
+      ul.drop-menu li {
+        padding: 12px 16px;
+        cursor: pointer;
+      }
+
+      ul.drop-menu li:hover {
+        background-color: #ddd;
+      }
+
+      div.top-menu:hover {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+      }
+
+      /* 
+      div.menu-box 에 hover 가되면
+      실제로는 ul.drop-menu 에 style 이 적용되어
+      display:block 이 되고 drop menu 가 나타난다
+      */
+      div.menu-box:hover ul.drop-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반갑습니다</h1>
+    <!-- 첫메뉴 -->
+    <div class="menu-box">
+      <div class="top-menu">짜장면</div>
+      <ul class="drop-menu">
+        <li>보통</li>
+        <li>간짜장</li>
+        <li>쟁반짜장</li>
+      </ul>
+    </div>
+    <!-- 두번째 메뉴-->
+    <div class="menu-box">
+      <div class="top-menu">짬뽕</div>
+      <ul class="drop-menu">
+        <li>보통</li>
+        <li>해물짬뽕</li>
+        <li>짬짜면</li>
+      </ul>
+    </div>
+  </body>
+</html>
