@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+      div {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      div:nth-of-type(1) {
+        background-image: url("./images/image_1.jpg");
+        /*
+        box 크기만큼 자동으로 이미지 채우기
+        background-size : cover = box 보다 이미지가 클 때
+        background-size : contain = box 보다 이미자 작을 때
+        */
+      }
+      div:nth-of-type(2) {
+        background-image: url("./images/image_2.jpg");
+      }
+      div:nth-of-type(3) {
+        background-image: url("./images/image_3.jpg");
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>반갑습니다</h1>
+      <h3>parallax 효과</h3>
+      <p>
+        배경이미지를 attachment를 사용하여 fixed(고정)하면 div box 는 scroll 이
+        되지만 배경은 고정되어 마치 이미지가 브라인드 처럼 전환 되는 효과를 낼수
+        있다
+      </p>
+    </div>
+    <div><h1>우리나라만세</h1></div>
+    <div><h1>Republic of Korea</h1></div>
+  </body>
+</html>
