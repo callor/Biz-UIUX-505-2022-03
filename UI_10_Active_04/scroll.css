@@ -1,0 +1,34 @@
+@media screen and (max-width: 1060px) {
+  header {
+    padding: 10px;
+  }
+  nav {
+    align-items: center;
+  }
+  nav ul {
+    display: none;
+  }
+  .scroll .logo,
+  .logo {
+    font-size: 1.5rem;
+    margin: 10px 0px 0px 10px;
+  }
+
+  button.ham-button,
+  .scroll button.ham-button {
+    display: block;
+  }
+}
+
+.scroll .logo {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+}
+
+.scroll nav {
+  align-items: center;
+}
+
+.scroll ul {
+  margin: 0;
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: rgb(187, 28, 28);
+        transition: all 0.2s;
+      }
+
+      nav {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        transition: align-items 0.2s;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin: 50px 50px 0 0;
+      }
+
+      nav li {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      nav li:not(:last-of-type) {
+        margin-right: 20px;
+      }
+
+      nav li:hover {
+        color: white;
+      }
+
+      /* 햄버거 버튼 만들기
+      ----------------------*/
+      button.ham-button {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+      }
+
+      /* 
+      button 과 내부의 span 에 공통 속성 지정 
+      button 자체를 icon 처럼 배치하기 쉽도록 하기 위하여
+      inline-block 으로 설정한ㄷ
+      */
+      button.ham-button,
+      button.ham-button span {
+        display: inline-block;
+      }
+
+      button.ham-button span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+
+        /* ham bugger 의 내부 빵의 모양 */
+        height: 3px;
+        border-radius: 3px;
+        background-color: white;
+      }
+
+      button.ham-button span:nth-of-type(1) {
+        top: 0;
+      }
+      button.ham-button span:nth-of-type(2) {
+        top: 10px;
+      }
+      button.ham-button span:nth-of-type(3) {
+        top: 20px;
+      }
+
+      button.ham-button {
+        background: transparent;
+        display: none;
+        transition: margin 0.2s;
+      }
+
+      .logo {
+        background-image: url("./logo.png");
+        background-size: cover;
+        background-position: center;
+        font-size: 2rem;
+        display: inline-block;
+        padding: 20px 30px;
+        color: white;
+        margin: 50px 0 0 50px;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+    </style>
+    <link rel="stylesheet" href="./scroll.css" />
+    <script src="./scroll.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1><a href="index2.html" class="logo">LOGO</a></h1>
+        <ul>
+          <li>HOME</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Portfolio</li>
+          <li>Contact</li>
+        </ul>
+        <button class="ham-button">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+    <section>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, fuga.
+        Ipsa enim fuga optio vitae tempore? Doloribus, corporis vitae dolore
+        sapiente nam cupiditate eum, optio alias commodi consectetur velit
+        harum.
+      </p>
+    </section>
+  </body>
+</html>
