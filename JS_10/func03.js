@@ -27,7 +27,19 @@ function func4() {
   console.log("나는 func4 입니다");
 }
 
-func5();
+/*
+JS 에서 const 시작하는 함수 선언
+새로운 JS 에서는 기존에 function 으로 시작하는 함수 대신
+변수처럼 const 로 시작하는 함수 선언 명령문이 도입되었다
+
+const 로 시작하는 함수는
+실행과정에서 호이스팅이 일어나지 않는다
+
+반드시 함수를 호출하기 전에
+선언문이 나타나야 한다
+
+*/
 const func5 = function () {
   console.log("나는 func5 입니다");
 };
+func5();
