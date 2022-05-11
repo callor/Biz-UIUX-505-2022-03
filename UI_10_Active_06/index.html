@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      div.out1,
+      div.out2,
+      div.out3 {
+        margin: 20px auto;
+      }
+
+      div.out1 {
+        width: 80vw;
+        height: 80vh;
+        border: 2px solid blue;
+      }
+
+      div.out2,
+      div.out3 {
+        width: 60%;
+        height: 60%;
+      }
+
+      div.out2 {
+        border: 2px solid green;
+      }
+      div.out3 {
+        border: 2px solid red;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const out1 = document.querySelector("div.out1");
+        const out2 = document.querySelector("div.out2");
+        const out3 = document.querySelector("div.out3");
+
+        out1.addEventListener("click", () => {
+          alert("나는 OUT 1 입니다");
+        });
+        out2.addEventListener("click", () => {
+          alert("나는 OUT 2 입니다");
+        });
+        out3.addEventListener("click", () => {
+          alert("나는 OUT 3 입니다");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>반갑습니다</h1>
+    <div class="out1">
+      <div class="out2">
+        <div class="out3">나는 BOX 입니다</div>
+      </div>
+    </div>
+  </body>
+</html>
