@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div.images {
+        display: flex;
+        height: 400px;
+        transition: 1s;
+      }
+      div.images img {
+        width: 600px;
+      }
+      div.image_window {
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+      }
+
+      div.btn_box {
+        width: 600px;
+        display: flex;
+      }
+
+      button.btn {
+        width: 100px;
+        height: 30px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: teal;
+      }
+      button.btn:hover {
+        background-color: turquoise;
+      }
+
+      button.btn.prev {
+        margin-right: auto;
+      }
+      button.btn.next {
+        margin-left: auto;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const IMAGE_WIDTH = 600;
+        const preBtn = document.querySelector("button.prev");
+        const nextBtn = document.querySelector("button.next");
+        const images = document.querySelector("div.images");
+        const imgCount = document.querySelectorAll("div.images img").length;
+
+        let position = 0;
+        let curPosition = 0;
+        if (preBtn) {
+          preBtn.addEventListener("click", () => {
+            if (curPosition > 0) {
+              position += IMAGE_WIDTH;
+              images.style.transform = `translateX(${position}px)`;
+              curPosition--;
+            }
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            if (curPosition < imgCount - 1) {
+              position -= IMAGE_WIDTH;
+              images.style.transform = `translateX(${position}px)`;
+              curPosition++;
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="image_window">
+      <div class="images">
+        <img src="images/image1.jpg" />
+        <img src="images/image2.jpg" />
+        <img src="images/image3.jpg" />
+        <img src="images/image4.jpg" />
+        <img src="images/image5.jpg" />
+      </div>
+    </div>
+    <div class="btn_box">
+      <button class="btn prev">PREV</button>
+      <button class="btn next">NEXT</button>
+    </div>
+  </body>
+</html>

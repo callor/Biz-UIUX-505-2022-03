@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      /* 
+      body 의 display 를 flex 지정하고
+      flex-direction 을 column 으로 지정하면
+      위에서 아랫방향으로 흐르는 layout 이 된다
+      */
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /*
+      em 단위와 rem 단위
+      주변의 있는 text 의 font-size 를 기준으로 설정하는 단위
+      주변의 있는 text 의 font-size 를 1(rem, em) 로 보고 그에 비례하여
+      단위로 설정한다.
+
+      */
+      header {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      section {
+        flex: 1;
+        border: 1px solid blue;
+      }
+      footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 0.9em;
+      }
+      nav.main_nav {
+        color: white;
+        background: content-box linear-gradient(to right, blue, white);
+      }
+
+      div.nav_box {
+        display: flex;
+        flex-direction: column;
+      }
+
+      ul {
+        list-style: none;
+      }
+      nav.main_nav > ul {
+        display: flex;
+      }
+
+      nav.main_nav > ul > li {
+        max-height: auto;
+        padding: 12px;
+      }
+
+      nav.main_nav li {
+        border-bottom: 3px solid transparent;
+      }
+
+      /*
+      tag 를 보이거나 감출때
+      display:none, display:block 설정하는데 이 속성은
+      transition이 작동하지 않는다
+
+      transition을 사용하기 위하여
+      height를 0 으로 설정했다가 hover 되면 100%;
+      visibility 는 hiddne 으로 설정했다가 hover 되면 visibility 로
+      opacity 도 0 에서 1로 변화되도록
+      */
+      nav.drop_nav {
+        display: flex;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: 1s ease-out;
+      }
+
+      div.nav_box:hover .drop_nav {
+        visibility: visible;
+        height: 100%;
+        opacity: 1;
+      }
+
+      nav.drop_nav li {
+        padding: 12px;
+      }
+
+      nav li {
+        padding: 12px;
+        cursor: pointer;
+        min-width: 150px;
+        transition: 0.6s;
+      }
+
+      nav.main_nav li:hover {
+        border-bottom: 3px solid white;
+      }
+
+      nav.drop_nav li:not(li.home_sub):hover {
+        border-bottom: 3px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>반갑습니다</h1>
+    </header>
+    <div class="nav_box">
+      <nav class="main_nav">
+        <ul>
+          <li>Home</li>
+          <li>공지사항</li>
+          <li>자유게시판</li>
+          <li>로그인</li>
+        </ul>
+      </nav>
+      <nav class="drop_nav">
+        <ul>
+          <li class="home_sub"></li>
+        </ul>
+        <ul>
+          <li>전체 공지사항</li>
+          <li>중요 업무사항</li>
+          <li>부서별 공지사항</li>
+        </ul>
+        <ul>
+          <li>자유게시판</li>
+          <li>유머게시판</li>
+          <li>사진게시판</li>
+        </ul>
+        <ul>
+          <li>로그인</li>
+          <li>회원가입</li>
+          <li>1:1문의</li>
+        </ul>
+      </nav>
+    </div>
+    <section></section>
+    <footer>
+      <address>CopyRight &copy; callor@callor.com</address>
+    </footer>
+  </body>
+</html>
