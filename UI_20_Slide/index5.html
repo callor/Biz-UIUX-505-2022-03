@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 50%;
+        height: 300px;
+        border: 2px solid blue;
+        background-color: green;
+        margin: 30px auto;
+      }
+
+      div:nth-of-type(1) {
+        background-image: url("./images/image1.jpg");
+      }
+      div:nth-of-type(2) {
+        background-image: url("./images/image2.jpg");
+      }
+      div:nth-of-type(3) {
+        background-image: url("./images/image3.jpg");
+      }
+      div:nth-of-type(4) {
+        background-image: url("./images/image4.jpg");
+      }
+      div:nth-of-type(5) {
+        background-image: url("./images/image5.jpg");
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  </head>
+  <body>
+    <div data-aos="fade-up"></div>
+    <div data-aos="fade-down"></div>
+    <div data-aos="flip-up"></div>
+    <div data-aos="zoom-in"></div>
+    <div data-aos="zoom-in-down"></div>
+  </body>
+  <script>
+    AOS.init();
+  </script>
+</html>

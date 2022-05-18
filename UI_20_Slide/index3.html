@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      article.container {
+        width: 500px;
+        margin: auto;
+      }
+
+      div.album {
+        width: 500px;
+        overflow: hidden;
+      }
+
+      div.album div.images img {
+        width: 100%;
+        opacity: 1;
+        transition: 1s ease-in-out;
+      }
+
+      div.images {
+        display: flex;
+      }
+
+      div.images img {
+        width: 100%;
+      }
+
+      div.ticker {
+        overflow: hidden;
+      }
+
+      @keyframes ticker-slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-500px);
+        }
+      }
+      /* 다수의 이미지를 담고 있는 box */
+      div.ticker div.images {
+        animation: ticker-slide 5s linear infinite;
+      }
+
+      div.ticker:hover div.images {
+        animation-play-state: paused;
+        cursor: pointer;
+      }
+
+      div.ticker img {
+        width: 100px;
+        border: 1px solid green;
+        opacity: 1;
+        transition: opacity 0.6s ease-in-out;
+      }
+
+      div.ticker img:hover {
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반갑습니다</h1>
+    <article class="container">
+      <div class="album">
+        <div class="images">
+          <img src="./images/image1.jpg" alt="" />
+        </div>
+      </div>
+      <div class="ticker">
+        <div class="images">
+          <img src="./images/image1.jpg" alt="" />
+          <img src="./images/image2.jpg" alt="" />
+          <img src="./images/image3.jpg" alt="" />
+          <img src="./images/image4.jpg" alt="" />
+          <img src="./images/image5.jpg" alt="" />
+
+          <img src="./images/image1.jpg" alt="" />
+          <img src="./images/image2.jpg" alt="" />
+          <img src="./images/image3.jpg" alt="" />
+          <img src="./images/image4.jpg" alt="" />
+          <img src="./images/image5.jpg" alt="" />
+        </div>
+      </div>
+    </article>
+  </body>
+  <script>
+    const ticker_click_cb = (e) => {
+      /*
+        다수의 img 에 event 를 설정하려면
+        복잡한 코드를 작성해야 한다
+        tag 를 querySelectorAll() 가져와서 for() 반복문을 사용하여
+        모든 tag 들에게 event를 add 해야한다
+
+        대신 img 를 감싸고 있는 div.ticker 에 event 를 설정하고
+        e.target 값을 사용하여 실제 클릭된 대상에 대하여
+        핸들링을 할 것이다
+        */
+      const ticker_img = e.target;
+      // 최종 click 된 대상이 img 인지 확인하고
+      if (ticker_img.tagName === "IMG") {
+        console.log(ticker_img.src);
+        // 다수의 감싸진 tag 중에 필요한 요소를 가져올때
+        // 바깥쪽 box 부터 순서대로 접근하여 가져오는 방법
+        const album = document.querySelector("div.album");
+        // const img = document.querySelector("div.album img")
+        const albumImg = album.querySelector("img");
+
+        albumImg.style.marginLeft = "-100%";
+        albumImg.style.opacity = "0";
+        albumImg.style.transform = "rotate(-90deg)";
+
+        // albumImg.src = ticker_img.src;
+
+        const newImg = document.createElement("img");
+        newImg.src = ticker_img.src;
+        // newImg.style.transform = "rotate(90deg)";
+
+        album.querySelector("div.images").appendChild(newImg);
+
+        setTimeout(() => {
+          // 약 1초 후에 div.images box 의 img 첫번째 요소 삭제
+          album.querySelector("div.images img").remove();
+        }, 1000);
+      } // end if img
+    }; // end ticker_click_cb
+    document.addEventListener("DOMContentLoaded", () => {
+      const ticker = document.querySelector("div.ticker");
+      console.log(ticker);
+      if (ticker) {
+        ticker.addEventListener("click", ticker_click_cb);
+      }
+    });
+  </script>
+</html>
