@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        background-color: blue;
+        color: white;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        padding: 6px 16px;
+        margin: 6px 0;
+        border-bottom: 3px solid transparent;
+        transition: border 0.7s ease-out;
+      }
+
+      nav li:hover {
+        border-bottom: 3px solid yellow;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반갑습니다</h1>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>공지사항</li>
+        <li>게시판</li>
+        <li>로그인</li>
+        <li>회원가입</li>
+      </ul>
+    </nav>
+  </body>
+</html>
